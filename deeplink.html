@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3498db">
+    <title>Deeplink Parameters</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+</head>
+<body>
+    <div class="container">
+        <h1>Parameter Display</h1>
+        
+        <div class="parameter-display">
+            <div class="parameter">
+                <h2>Adjective:</h2>
+                <p id="adjValue">Loading...</p>
+            </div>
+            
+            <div class="parameter">
+                <h2>Noun:</h2>
+                <p id="nounValue">Loading...</p>
+            </div>
+        </div>
+        
+        <div class="button-container">
+            <a href="index.html" class="button">Back to Home</a>
+        </div>
+    </div>
+
+    <script src="js/route.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/pwa/service-worker.js')
+                .then(reg => console.log('Service worker registered', reg))
+                .catch(err => console.log('Service worker not registered', err));
+        }
+    </script>
+</body>
+</html>
